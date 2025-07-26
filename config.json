@@ -1,0 +1,62 @@
+{
+  "name": "Crypto Double Bottom Agent",
+  "version": "1.0.0",
+  "description": "Agente inteligente para detecção de padrões de fundo duplo em criptomoedas",
+  "type": "intelligent",
+  "model": "giga-brain",
+  
+  "apis": {
+    "coingecko": {
+      "endpoint": "https://api.coingecko.com/api/v3",
+      "rateLimit": 50
+    },
+    "coinmarketcap": {
+      "endpoint": "https://pro-api.coinmarketcap.com/v1",
+      "apiKey": "7a703dd0-d944-41f4-805d-b9b3780e08ec",
+      "rateLimit": 30
+    }
+  },
+  
+  "parameters": {
+    "minVolume": 1000000,
+    "minMarketCap": 40000000,
+    "timeframe": "4h",
+    "tolerance": 0.20,
+    "timeBetweenBottoms": {
+      "min": 21,
+      "max": 42
+    }
+  },
+  
+  "alerts": {
+    "yellow": {
+      "emoji": "🟡",
+      "trigger": "secondBottomForming",
+      "message": "Segundo fundo em formação"
+    },
+    "orange": {
+      "emoji": "🟠",
+      "trigger": "patternComplete",
+      "message": "Padrão completado"
+    },
+    "red": {
+      "emoji": "🔴",
+      "trigger": "breakoutImminent",
+      "message": "Rompimento iminente"
+    }
+  },
+  
+  "machineLearning": {
+    "enabled": true,
+    "algorithm": "pattern-recognition",
+    "features": ["depth", "timespan", "volume", "marketcap"],
+    "minDataPoints": 10
+  },
+  
+  "output": {
+    "format": "alert",
+    "channels": ["console", "api"],
+    "includeMetrics": true,
+    "includePrediction": true
+  }
+}
