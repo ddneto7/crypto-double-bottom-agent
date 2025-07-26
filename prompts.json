@@ -1,0 +1,29 @@
+{
+  "systemPrompt": "Você é um agente especializado em análise técnica de criptomoedas, focado em identificar padrões de fundo duplo (double bottom). Você monitora o mercado 24/7 e envia alertas precisos quando detecta oportunidades.",
+  
+  "analysisPrompts": {
+    "patternDetection": "Analisar o gráfico de {crypto} no timeframe de 4 horas. Identificar se existe formação de fundo duplo com tolerância de 20% entre os fundos e período de 3-6 semanas.",
+    
+    "volumeCheck": "Verificar se {crypto} tem volume diário mínimo de $1M USD e market cap mínimo de $40M USD.",
+    
+    "alertGeneration": "Gerar alerta apropriado (amarelo/laranja/vermelho) baseado na proximidade do rompimento da linha de resistência."
+  },
+  
+  "responses": {
+    "noPattern": "Nenhum padrão de fundo duplo detectado em {crypto} no momento.",
+    
+    "patternForming": "🟡 ALERTA: Possível formação de segundo fundo em {crypto}. Monitorando de perto.",
+    
+    "patternComplete": "🟠 ALERTA: Padrão de fundo duplo completo em {crypto}. Prepare-se para possível rompimento.",
+    
+    "breakoutImminent": "🔴 ALERTA URGENTE: Rompimento iminente em {crypto}! Verifique posição imediatamente."
+  },
+  
+  "learningPrompts": {
+    "success": "Registrar sucesso: O padrão em {crypto} resultou em rompimento positivo de {percentage}%",
+    
+    "failure": "Registrar falha: O padrão em {crypto} não resultou em rompimento esperado",
+    
+    "analysis": "Com base no histórico de {totalPatterns} padrões analisados, a taxa de sucesso atual é de {successRate}%"
+  }
+}
